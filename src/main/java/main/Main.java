@@ -1,15 +1,16 @@
 package main;
 
-import bean.User;
 import dao.impl.UserDaoImpl;
+import dao.impl.UserSkillDaoImpl;
+import dao.inter.EmploymentHistoryDaoInter;
 import dao.inter.UserDaoInter;
-
-import java.sql.*;
-import java.util.List;
+import dao.inter.UserSkillDaoInter;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        UserDaoInter userDao = new UserDaoImpl();
+        UserDaoInter userDao = Context.instanceUserDao();
+        UserSkillDaoInter userSkillDao = Context.instanceUserSkillDao();
+        EmploymentHistoryDaoInter empHis = Context.instanceEmploymentHistoryDao();
 //        List<User> userList = userDao.getAll();
 //        for (User user : userList) {
 //            System.out.println(user);
@@ -21,8 +22,14 @@ public class Main {
 //            System.out.println(user);
 //        }
 
-        User u = userDao.getById(2);
-        u.setName("sohret");
-        userDao.updateUser(u);
+//        User u = userDao.getById(2);
+//        u.setName("sohret");
+//        userDao.updateUser(u);
+
+//        User u2 = new User(0, "john", "shelbey", "john_shelbey@gmail.com", "+9943346444");
+//        userDao.addUser(u2);
+
+        System.out.println(empHis.getAllEmploymentHistoryByUserId(1));
+
     }
 }
