@@ -1,6 +1,6 @@
 package entity;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 public class User {
@@ -9,6 +9,8 @@ public class User {
     private String surname;
     private String email;
     private String phone;
+    private String profileDesc;
+    private String address;
     private Date birthDate;
     private Nationality nationality;
     private Nationality birthPlace;
@@ -21,12 +23,14 @@ public class User {
         this.id = id;
     }
 
-    public User(int id, String name, String surname, String email, String phone, Date birthDate, Nationality nationality, Nationality birthPlace) {
+    public User(int id, String name, String surname, String email, String phone, String profileDesc, String address, Date birthDate, Nationality nationality, Nationality birthPlace) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.email = email;
         this.phone = phone;
+        this.profileDesc = profileDesc;
+        this.address = address;
         this.birthDate = birthDate;
         this.nationality = nationality;
         this.birthPlace = birthPlace;
@@ -72,6 +76,22 @@ public class User {
         this.phone = phone;
     }
 
+    public String getProfileDesc() {
+        return profileDesc;
+    }
+
+    public void setProfileDesc(String profileDesc) {
+        this.profileDesc = profileDesc;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     public Date getBirthDate() {
         return birthDate;
     }
@@ -112,9 +132,12 @@ public class User {
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
+                ", profileDesc='" + profileDesc + '\'' +
+                ", address='" + address + '\'' +
                 ", birthDate=" + birthDate +
                 ", nationality=" + nationality +
                 ", birthPlace=" + birthPlace +
+                ", skills=" + skills +
                 '}';
     }
 }

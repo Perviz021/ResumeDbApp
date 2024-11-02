@@ -2,15 +2,15 @@ package main;
 
 import dao.impl.UserDaoImpl;
 import dao.impl.UserSkillDaoImpl;
-import dao.inter.EmploymentHistoryDaoInter;
-import dao.inter.UserDaoInter;
-import dao.inter.UserSkillDaoInter;
+import dao.inter.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         UserDaoInter userDao = Context.instanceUserDao();
         UserSkillDaoInter userSkillDao = Context.instanceUserSkillDao();
         EmploymentHistoryDaoInter empHis = Context.instanceEmploymentHistoryDao();
+        SkillDaoInter skillDaoInter = Context.instanceSkillDao();
+        CountryDaoInter countryDaoInter = Context.instanceCountryDao();
 //        List<User> userList = userDao.getAll();
 //        for (User user : userList) {
 //            System.out.println(user);
@@ -29,7 +29,7 @@ public class Main {
 //        User u2 = new User(0, "john", "shelbey", "john_shelbey@gmail.com", "+9943346444");
 //        userDao.addUser(u2);
 
-        System.out.println(empHis.getAllEmploymentHistoryByUserId(1));
+        System.out.println(countryDaoInter.getAllCountries());
 
     }
 }
