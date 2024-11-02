@@ -1,11 +1,7 @@
 package main;
 
-import dao.impl.EmploymentHistoryDaoImpl;
-import dao.impl.UserDaoImpl;
-import dao.impl.UserSkillDaoImpl;
-import dao.inter.EmploymentHistoryDaoInter;
-import dao.inter.UserDaoInter;
-import dao.inter.UserSkillDaoInter;
+import dao.impl.*;
+import dao.inter.*;
 
 public class Context {
     public static UserDaoInter instanceUserDao() {
@@ -14,6 +10,14 @@ public class Context {
 
     public static UserSkillDaoInter instanceUserSkillDao() {
         return new UserSkillDaoImpl();
+    }
+
+    public static SkillDaoInter instanceSkillDao() {
+        return new SkillDaoImpl();
+    }
+
+    public static CountryDaoInter instanceCountryDao() {
+        return new CountryDaoImpl();
     }
 
     public static EmploymentHistoryDaoInter instanceEmploymentHistoryDao() {
