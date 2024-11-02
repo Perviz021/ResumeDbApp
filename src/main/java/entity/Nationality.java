@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.Objects;
+
 public class Nationality {
     private int id;
     private String name;
@@ -40,10 +42,19 @@ public class Nationality {
 
     @Override
     public String toString() {
-        return "Nationality{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", countryName='" + countryName + '\'' +
-                '}';
+        return name + " (" + countryName + ')';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Nationality that = (Nationality) o;
+        return id == that.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
